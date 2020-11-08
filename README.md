@@ -9,9 +9,11 @@ Deep Retinex Decomposition for Low-Light Enhancement. In BMVC'18 (Oral Presentat
 <img src="figs/results.png" width="800px"/>
 
 ### Requirements ###
-1. Python
+1. Python (3.4-3.6)
 2. Tensorflow >= 1.5.0
-3. numpy, PIL
+3. protobuf == 3.6.0 (install after tensorflow)
+4. numpy 
+5. PIL (pip install Pillow)
 
 ### Testing  Usage ###
 To quickly test your own images with our model, you can just run through
