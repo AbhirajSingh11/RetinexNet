@@ -52,7 +52,7 @@ def RelightNet(input_L, input_R, channel=64, kernel_size=3):
 class lowlight_enhance(object):
     def __init__(self, sess):
         self.sess = sess
-        self.DecomNet_layer_num = 5
+        self.DecomNet_layer_num=  7
 
         # build the model
         self.input_low = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low')
@@ -209,6 +209,8 @@ class lowlight_enhance(object):
                    global_step=iter_num)
 
     def load(self, saver, ckpt_dir):
+        print('CHECKPT DIR')
+        print(ckpt_dir)
         ckpt = tf.train.get_checkpoint_state(ckpt_dir)
         if ckpt and ckpt.model_checkpoint_path:
             full_path = tf.train.latest_checkpoint(ckpt_dir)
@@ -226,8 +228,8 @@ class lowlight_enhance(object):
         tf.global_variables_initializer().run()
 
         print("[*] Reading checkpoint...")
-        load_model_status_Decom, _ = self.load(self.saver_Decom, './model/Decom')
-        load_model_status_Relight, _ = self.load(self.saver_Relight, './model/Relight')
+        load_model_status_Decom, _ = self.load(self.saver_Decom, './checkpoint/Decom')
+        load_model_status_Relight, _ = self.load(self.saver_Relight, './checkpoint/Relight')
         if load_model_status_Decom and load_model_status_Relight:
             print("[*] Load weights successfully...")
 

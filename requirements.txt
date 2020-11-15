@@ -1,0 +1,4 @@
+Tensorflow == 1.5.0
+protobuf == 3.6.0 
+numpy 
+Pillow
