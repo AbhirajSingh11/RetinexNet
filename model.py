@@ -52,7 +52,7 @@ def RelightNet(input_L, input_R, channel=64, kernel_size=3):
 class lowlight_enhance(object):
     def __init__(self, sess):
         self.sess = sess
-        self.DecomNet_layer_num=  7
+        self.DecomNet_layer_num = 5
 
         # build the model
         self.input_low = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low')
